@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterOutlet } from '@angular/router';
+// import { ActivatedRoute, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-formateurs',
@@ -8,7 +8,8 @@ import { ActivatedRoute, RouterOutlet } from '@angular/router';
 })
 export class FormateursComponent implements OnInit {
 
-  constructor(private routeur :RouterOutlet, private routeActive :ActivatedRoute) { }
+  // constructor(private routeur :RouterOutlet, private routeActive :ActivatedRoute) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
