@@ -5,6 +5,7 @@ import {ApiserviceService} from '../../apiservice.service';
   selector: 'app-lister-formations',
   templateUrl: './lister-formations.component.html',
   styleUrls: ['./lister-formations.component.css']
+  
 })
 export class ListerFormationsComponent implements OnInit {
 

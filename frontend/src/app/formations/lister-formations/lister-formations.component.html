@@ -1,41 +1,38 @@
-<div class="container mt-5">
+<div class="container mt-1">
+    <div class="container ">
+      <div class="row">
+        <div class="col">
+              <table class="table table-dark table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col" class="p-3 align-middle">#</th>
+                    <th scope="col" class="align-middle">Nom formation</th>
+                    <th scope="col" class="align-middle">Durée formation</th>
+                    <th scope="col" class="align-middle">Nom du formateur</th>
+                    <th scope="col" class="align-middle">Catégorie</th>
+                    <th scope="col" class="align-middle">Modifier</th>
+                    <th scope="col" class="align-middle">Supprimer</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor='let formation of lectureDonnee'>
+                    <th scope="row" class="align-middle p-3">{{formation.idFormation}}</th>
+                    <th class="align-middle p-3">{{formation.nomFormation}}</th>
+                    <td class="align-middle">{{formation.dureeFormation  | titlecase}} jours </td>
+                    <td class="align-middle">{{formation.nomFormateur  | titlecase}}</td>
+                    <td class="align-middle">{{formation.nomCategorie}}</td>
+                    
+                    <td class="align-middle" ><a [routerLink]="['ajouter-formations', formation.idFormation]" class="btn  btn-primary" >Modifier</a></td>
 
 
-  <!-- Message succes -->
+                    <td class="align-middle"><button class="btn  btn-danger" (click)="supprimerId(formation.idFormation)">Supprimer</button></td>
+                  </tr>
+                
 
-<div  *ngIf="suppSuccess" class="alert alert-success alert-dismissible fade show" role="alert">
-    <strong>{{suppSuccess}}</strong>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"></button>
-</div>
-
-<!-- Tableau des formations -->
-
-    <table class="table table-dark table-striped mt-5">
-        <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Nom formation</th>
-              <th scope="col">Durée de la formation</th>
-              <th scope="col">Nom du formateur</th>
-              <th scope="col">Catégorie</th>
-              <th scope="col"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor = 'let formation of lectureDonnee'>
-              <th scope="row">{{formation.idFormation}}</th>
-              <td>{{formation.nomFormation}}</td>
-              <td>{{formation.dureeFormation}} jours</td>
-              <td>{{formation.nomFormateur}}</td>
-              <td>{{formation.nomCategorie}}</td>
-              <td>
-                <button class="btn btn-sm btn-danger" (click)="supprimerId(formation.idFormation)">Supprimer</button>
-                &nbsp;
-                <a [routerLink]="['/ajouter-formations', formation.idFormation]" class="btn btn-sm btn-success">Modifier</a>
-              </td>
-            </tr>
-          </tbody>
-      </table>
-
-     
-</div>
+                </tbody>
+              </table>
+        </div>
+      </div>
+    </div>
+  </div>
