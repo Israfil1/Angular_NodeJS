@@ -1,0 +1,29 @@
+h1,h2,h3,h4 {
+    text-align: center;
+    padding: 20px 0px;
+}
+
+h1, h2, h3{
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 4em;
+    text-shadow: 11px 1px 2px grey, 0 0 1em grey, 0 0 0.2em grey;;
+}
+
+h4 {
+    font-style: italic;
+}
+
+ul{
+    list-style-type: none;
+    padding: 30px;
+    padding-left:10px;
+    border: 5px solid rgba(19, 199, 73, 0.76);
+    border-radius: 20px;
+}
+
+li{
+    padding:10px;
+}
