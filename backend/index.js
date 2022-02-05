@@ -179,41 +179,47 @@ app.get('/formateurs/:idFormateur', (req, res) =>{
 //Ajouter un formateur
 
 app.post('/formateurs', (req, res) => {
-   console.log(req.body, 'Ajouter un formateur')
-
-   let nomFormateur = req.body.nomFormateur;
-   let sql = `INSERT INTO formateurs(nomFormateur) VALUES ('${nomFormateur}')` 
-
-   db.query(sql, (err, result) => {
-       if(err) {
-           console.log('Erreur lors de lajout ', err)
-       }
-           res.send({
-               message : "Formateur ajouté"
-           })
-   })
-
-})
-
-//Modifier un formateur
-
-app.put('/formateurs/:idFormateur', (req, res) => {
-   console.log(req.body, 'Modifier un formateur')
-
-   let idFormateur = req.params.idFormateur;
-   let nomFormateur = req.body.nomFormateur;
-   let sql = `UPDATE formateurs set nomFormateur = '${nomFormateur}' WHERE idFormateur = ${idFormateur}`;
-   
-   db.query(sql, (err, result) => {
-       if(err) {
-           console.log('erreur de la modification ', err.message)
-       }
-       res.send({
-           message:'Formateur modifié'
-       })
-   })
-
-})
+    console.log(req.body, 'Ajouter un formateur')
+ 
+    let nomFormateur = req.body.nomFormateur;
+    let prenomFormateur = req.body.prenomFormateur;
+    let mailFormateur = req.body.mailFormateur;
+    let photoFormateur = req.body.photoFormateur;
+    let sql = `INSERT INTO formateurs(nomFormateur, prenomFormateur, mailFormateur, photoFormateur) VALUES ('${nomFormateur}','${prenomFormateur}','${mailFormateur}','${photoFormateur}')` 
+ 
+    db.query(sql, (err, result) => {
+        if(err) {
+            console.log('Erreur lors de lajout ', err)
+        }
+            res.send({
+                message : "Formateur ajouté"
+            })
+    })
+ 
+ })
+ 
+ //Modifier un formateur
+ 
+ app.put('/formateurs/:idFormateur', (req, res) => {
+    console.log(req.body, 'Modifier un formateur')
+ 
+    let idFormateur = req.params.idFormateur;
+    let nomFormateur = req.body.nomFormateur;
+    let prenomFormateur = req.body.prenomFormateur;
+    let mailFormateur = req.body.mailFormateur;
+    let photoFormateur = req.body.photoFormateur;
+    let sql = `UPDATE formateurs set nomFormateur = '${nomFormateur}', prenomFormateur = '${prenomFormateur}', mailFormateur = '${mailFormateur}', photoFormateur = '${photoFormateur}' WHERE idFormateur = ${idFormateur}`;
+    
+    db.query(sql, (err, result) => {
+        if(err) {
+            console.log('erreur de la modification ', err.message)
+        }
+        res.send({
+            message:'Formateur modifié'
+        })
+    })
+ 
+ })
 
 //Supprimer un formateur
 app.delete('/formateurs/:idFormateur', (req, res) => {
@@ -236,7 +242,7 @@ app.delete('/formateurs/:idFormateur', (req, res) => {
 
  //récupérer toutes les formations
  app.get('/formations', (req, res) => {
-     let sql = 'select * from Formations f, Formateurs fo WHERE f.idFormateur = fo.idFormateur'
+     let sql = 'select * from Formations f, Formateurs fo, categorie c WHERE f.idFormateur = fo.idFormateur AND f.idCategorie = c.idCategorie'
 
      db.query(sql, (err, result) => {
 

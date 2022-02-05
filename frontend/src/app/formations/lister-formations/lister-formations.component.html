@@ -17,6 +17,7 @@
               <th scope="col">Nom formation</th>
               <th scope="col">Durée de la formation</th>
               <th scope="col">Nom du formateur</th>
+              <th scope="col">Catégorie</th>
               <th scope="col"></th>
             </tr>
           </thead>
@@ -26,6 +27,7 @@
               <td>{{formation.nomFormation}}</td>
               <td>{{formation.dureeFormation}} jours</td>
               <td>{{formation.nomFormateur}}</td>
+              <td>{{formation.nomCategorie}}</td>
               <td>
                 <button class="btn btn-sm btn-danger" (click)="supprimerId(formation.idFormation)">Supprimer</button>
                 &nbsp;
