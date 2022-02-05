@@ -4,6 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiserviceService } from 'src/app/apiservice.service';
 
 
+
 @Component({
   selector: 'app-ajouter-formateurs',
   templateUrl: './ajouter-formateurs.component.html',
@@ -16,6 +17,7 @@ export class AjouterFormateursComponent implements OnInit {
   errormsg:any;
   successmsg:any;
   getparamid:any;
+  
 
   ngOnInit(): void {
     
@@ -26,7 +28,7 @@ export class AjouterFormateursComponent implements OnInit {
         this.formateursForm.patchValue({
           nomFormateur: res.data[0].nomFormateur,
           prenomFormateur: res.data[0].prenomFormateur,
-          mail: res.data[0].mail
+          mailFormateur: res.data[0].mailFormateur
         })
          });
     }
@@ -39,7 +41,8 @@ export class AjouterFormateursComponent implements OnInit {
     
     'nomFormateur' : new FormControl('',[Validators.required]),
     'prenomFormateur' : new FormControl('',[Validators.required]),
-    'mail' : new FormControl('',[Validators.required])
+    'mailFormateur' : new FormControl('',[Validators.required]),
+    'photoFormateur' : new FormControl('',[Validators.required])
 
   });
 
@@ -78,7 +81,7 @@ export class AjouterFormateursComponent implements OnInit {
       }
   }
 
-  
+ 
 
 
 }

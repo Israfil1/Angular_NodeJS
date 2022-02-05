@@ -4,9 +4,9 @@ import { Observable } from 'rxjs';
 
 
 
-
 @Injectable({
   providedIn: 'root'
+  
 })
 export class ApiserviceService {
 
@@ -15,6 +15,9 @@ export class ApiserviceService {
   //Connexion front / back
 
   apiUrl = 'http://localhost:3000/formateurs';
+  
+  //O2
+  //apiUrl ='https://www.dg-productions.fr/2itech/backend';
 
   //Récupération de toutes les données
 

@@ -15,6 +15,7 @@ import { FormateursComponent } from './Formateurs/formateurs.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,7 @@ import { FormateursComponent } from './Formateurs/formateurs.component';
     AccueilComponent,
     ListerFormateursComponent,
     AjouterFormateursComponent,
+  
     
     
   ],

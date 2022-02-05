@@ -11,6 +11,14 @@ const routes: Routes = [
   {path: '', redirectTo: '/accueil', pathMatch: 'full'},
   {path: 'accueil', component: AccueilComponent},
   {path: 'formateurs',component: FormateursComponent},
+  // {path: 'formateurs',component: FormateursComponent,
+     
+  //   children: [
+  //               {path: 'ajouter-formateurs', component: AjouterFormateursComponent},
+  //               {path: 'ajouter-formateurs/:id', component: AjouterFormateursComponent},
+  //               {path: '**', component: PageNonTrouveeComponent}
+  //   ]
+  // },
   {path: 'formateurs/ajouter-formateurs', component: AjouterFormateursComponent},
   {path: 'formateurs/ajouter-formateurs/:id', component: AjouterFormateursComponent},
   {path: '**', component: PageNonTrouveeComponent},

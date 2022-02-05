@@ -24,10 +24,11 @@
             <input type="text" class="form-control" formControlName="prenomFormateur" placeholder="Entrer le prenom du nouveau formateur">
         </div>
         <div class="col-lg-4 mt-2">
-            <input type="text" class="form-control" formControlName="mail" placeholder="Entrer le mail du nouveau formateur">
+            <input type="text" class="form-control" formControlName="mailFormateur" placeholder="Entrer le mail du nouveau formateur">
         </div>
        
-
+     
+        
         <div class="col-lg-4 mt-2" *ngIf="!getparamid" (click)="formateursSubmit()">
             <button class="btn btn-primary btn-sm">Ajouter</button>
         </div>

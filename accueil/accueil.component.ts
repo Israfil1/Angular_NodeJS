@@ -1,3 +1,4 @@
+import { normalizeGenFileSuffix } from '@angular/compiler/src/aot/util';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -13,3 +14,4 @@ export class AccueilComponent implements OnInit {
   }
 
 }
+

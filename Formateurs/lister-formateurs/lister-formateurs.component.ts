@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiserviceService } from 'src/app/apiservice.service';
+import { ApiserviceService} from 'src/app/apiservice.service';
+// import { ActivatedRoute, Router } from '@angular/router';
+import { Input } from '@angular/core';
 
 @Component({
   selector: 'app-lister-formateurs',
@@ -8,8 +10,10 @@ import { ApiserviceService } from 'src/app/apiservice.service';
 })
 export class ListerFormateursComponent implements OnInit {
 
-  constructor(private service:ApiserviceService) { }
+  // constructor(private service:ApiserviceService,private routeur: Router, private routeActive: ActivatedRoute) { }
+  
 
+  constructor(private service:ApiserviceService) { }
   readData:any;
   successmsg:any;
 
@@ -17,7 +21,8 @@ export class ListerFormateursComponent implements OnInit {
     this.getAllData();
     }
   
-
+    @Input() card= true
+    // cardL = this.card
 
   //Supprimer un formateur
   supprimerID(id:any)
@@ -35,4 +40,6 @@ export class ListerFormateursComponent implements OnInit {
     });
 
   }
+
+
 }

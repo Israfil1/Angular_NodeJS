@@ -15,3 +15,8 @@ h1 {
 h4 {
     font-style: italic;
 }
+
+button, button:hover, button:active, button::before,button::after, button:focus {
+    color: white;
+    border:none;
+}
