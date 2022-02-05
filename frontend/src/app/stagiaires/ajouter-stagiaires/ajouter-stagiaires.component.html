@@ -1,0 +1,26 @@
+<div class="container mt-5">
+
+
+    <div  *ngIf="msgErreur" class="alert alert-danger alert-dismissible fade show col-lg-4" role="alert">
+        <strong>{{msgErreur}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"></button>
+    </div>
+
+    <div  *ngIf="msgSucces" class="alert alert-success alert-dismissible fade show col-lg-4" role="alert">
+        <strong>{{msgSucces}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"></button>
+    </div>
+
+    <h1>Pour ajouter/modifier un(e) stagiaire merci de remplir le champ</h1>
+    <form [formGroup]="stagiaireForm">
+        <div class="col-lg-4 mt-2">
+            <input type="text" class="form-control" formControlName="nomStagiaire" placeholder="Saisir le nom du stagiaire">
+        </div>
+        <div class="col-lg-4 mt-2" *ngIf="!getParamId" (click)="validerStagiaire()">
+            <button class="btn btn-primary btn-sm">Ajouter le stagiaire</button>
+        </div>
+        <div class="col-lg-4 mt-2" *ngIf="getParamId" (click)="modifierStagiaire()">
+            <button class="btn btn-primary btn-sm">Mettre à jour le stagiaire</button>
+        </div>
+    </form>
+</div>

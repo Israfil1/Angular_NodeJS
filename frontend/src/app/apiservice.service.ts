@@ -46,8 +46,40 @@ export class ApiserviceService {
     return this._http.get(`${this.apiUrl}/${ids}`)
   }
 
-  // FORMATEUR
+  // Stagiaires
 
+  apiUrlStagiaire = 'http://localhost:3000/stagiaires';
+
+  getAllDataStagiaires(): Observable<any> {
+    return this._http.get(`${this.apiUrlStagiaire}`);
+  }
+
+  //Ajouter un stagiaire
+  ajouterStagiaires(data: any): Observable<any> {
+
+    return this._http.post(`${this.apiUrlStagiaire}`, data);
+
+  }
+
+  //Supprimer un stagiaire
+  supprimerStagiaires(id: any): Observable<any> {
+    let ids = id;
+    return this._http.delete(`${this.apiUrlStagiaire}/${ids}`);
+  }
+
+  //Modifier un stagiaire
+  updateStagiaires(data: any, id: any): Observable<any> {
+    let ids = id;
+    return this._http.put(`${this.apiUrlStagiaire}/${ids}`, data);
+  }
+
+  getSingleDataStagiaires(id: any): Observable<any> {
+    let ids = id;
+    return this._http.get(`${this.apiUrlStagiaire}/${ids}`)
+  }
+
+
+                //FORMATEUR 
   apiUrlFormateurs = 'http://localhost:3000/formateurs';
 
   getAllDataFormateurs(): Observable<any> {

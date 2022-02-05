@@ -1,4 +1,11 @@
 <div class="container mt-1">
+
+  <!-- Message en cas de succès de suppression de formateur -->
+  <div *ngIf="suppSuccess" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>{{suppSuccess}}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
     <div class="container ">
       <div class="row">
         <div class="col">
