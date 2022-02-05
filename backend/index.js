@@ -25,7 +25,7 @@ const db = mysql.createConnection({
      console.log("Connexion réussie à la base de données")
  }) 
  
-             // --------------------------------------------------------- TABLE categorie -------------------------------------------------
+        // --------------------------------------------------------- TABLE categorie -------------------------------------------------
 
  //récupérer toutes les catégories
  app.get('/categorie', (req, res) => {
@@ -128,7 +128,7 @@ app.delete('/categorie/:idCategorie', (req, res) => {
 
    }) 
 })
-            // --------------------------------------------------------- TABLE formateurs -------------------------------------------------
+    // --------------------------------------------------------- TABLE formateurs -------------------------------------------------
 
  //récupérer tous les formateurs
  app.get('/formateurs', (req, res) => {
@@ -232,11 +232,11 @@ app.delete('/formateurs/:idFormateur', (req, res) => {
    }) 
 })
 
-            // --------------------------------------------------------- TABLE FORMATIONS -------------------------------------------------
+        // --------------------------------------------------------- TABLE FORMATIONS -------------------------------------------------
 
  //récupérer toutes les formations
  app.get('/formations', (req, res) => {
-     let sql = 'select * from Formations'
+     let sql = 'select * from Formations f, Formateurs fo WHERE f.idFormateur = fo.idFormateur'
 
      db.query(sql, (err, result) => {
 
@@ -308,7 +308,7 @@ app.put('/formations/:idFormation', (req, res) => {
     let idFormation = req.params.idFormation;
     let nomFormation = req.body.nomFormation;
     let dureeFormation = req.body.dureeFormation;
-    let sql = `UPDATE formations set nomFormation = '${nomFormation}', dureeFormation = '${dureeFormation}', idFormateur = 1, idCategorie = 1 WHERE idFormation = ${idFormation}`;
+    let sql = `UPDATE formations set nomFormation = '${nomFormation}', dureeFormation = ${dureeFormation}, idFormateur = 1, idCategorie = 1 WHERE idFormation = ${idFormation}`;
     
     db.query(sql, (err, result) => {
         if(err) {
