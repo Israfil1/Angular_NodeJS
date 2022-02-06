@@ -18,9 +18,7 @@
                   <thead>
                     <tr>
                       <th scope="col" class="p-3 align-middle">#</th>
-                      <th scope="col" class="align-middle">Nom</th>
-                      <th scope="col" class="align-middle">Prénom</th>
-                      <th scope="col" class="align-middle">Mail</th>
+                      <th scope="col" class="align-middle">Nom Catégorie</th>
                       <th scope="col" class="align-middle">Modifier</th>
                       <th scope="col" class="align-middle">Supprimer</th>
   
@@ -31,7 +29,7 @@
                       <th scope="row" class="align-middle p-3">{{categorie.idCategorie}}</th>
                       <td class="align-middle">{{categorie.nomCategorie  | titlecase}}</td>
                       
-                      <!-- <td class="align-middle" ><a [routerLink]="['ajouter-formateurs',us.idFormateur]" class="btn  btn-primary" >Modifier</a></td> -->
+                      <td class="align-middle" ><a [routerLink]="['ajouter-categories',categorie.idCategorie]" class="btn  btn-primary" >Modifier</a></td>
   
   
                       <td class="align-middle"><button class="btn  btn-danger" (click)="deleteCategorie(categorie.idCategorie)">Supprimer</button></td>
@@ -43,20 +41,4 @@
           </div>
         </div>
       </div>
-  
-      <!-- <div class="container" *ngIf="card">
-        <div class="row">
-          <div class="col p-5 text-center" *ngFor='let us of readData'>
-            <div class="card" style="width: 18rem;" >
-              <img src="assets/img/{{us.photoFormateur && us.photoFormateur || 'photo.jpg'}}" class="card-img-top" alt="photo" style="height:300px ">
-              <div class="card-body">
-                <h5 class="card-title">{{us.nomFormateur  | titlecase}} {{us.prenomFormateur  | titlecase}}</h5>
-                <p class="card-text">Contact : <a href="mailto:{{us.mailFormateur}}">{{us.mailFormateur}}</a></p>
-                 <a [routerLink]="['/formateurs/ajouter-formateurs',us.idFormateur]" class="btn  btn-primary" >Modifier</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
-  
   </div>

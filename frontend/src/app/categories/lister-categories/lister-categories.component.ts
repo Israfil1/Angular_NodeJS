@@ -20,7 +20,7 @@ export class ListerCategoriesComponent implements OnInit {
   /* Fonction pour afficher toutes les catégories*/
 
   getCategories(){
-    this.service.getAllData().subscribe((res) => {
+    this.service.getAllDataCategories().subscribe((res) => {
       this.categoryData = res.Data
       console.log(this.categoryData);
     })
