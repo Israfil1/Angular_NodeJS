@@ -17,14 +17,6 @@ const routes: Routes = [
   {path: 'formateurs',component: FormateursComponent},
   {path: 'formations',component: FormationsComponent},
   {path: 'stagiaires',component: StagiairesComponent},
-  // {path: 'formateurs',component: FormateursComponent,
-     
-  //   children: [
-  //               {path: 'ajouter-formateurs', component: AjouterFormateursComponent},
-  //               {path: 'ajouter-formateurs/:id', component: AjouterFormateursComponent},
-  //               {path: '**', component: PageNonTrouveeComponent}
-  //   ]
-  // },
   {path: 'formateurs/ajouter-formateurs', component: AjouterFormateursComponent},
   {path: 'formateurs/ajouter-formateurs/:id', component: AjouterFormateursComponent},
   {path:'formations/ajouter-formations', component: AjouterFormationsComponent},
