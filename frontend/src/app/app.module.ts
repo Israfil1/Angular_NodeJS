@@ -19,6 +19,9 @@ import { StagiairesComponent } from './stagiaires/stagiaires.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ApiserviceService } from './apiservice.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CategoriesComponent } from './categories/categories.component';
+import { AjouterCategoriesComponent } from './categories/ajouter-categories/ajouter-categories.component';
+import { ListerCategoriesComponent } from './categories/lister-categories/lister-categories.component';
 
 
 @NgModule({
@@ -36,6 +39,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AjouterFormateursComponent,
     ListerStagiairesComponent,
     AjouterStagiairesComponent,
+    CategoriesComponent,
+    AjouterCategoriesComponent,
+    ListerCategoriesComponent,
 
 
   ],
