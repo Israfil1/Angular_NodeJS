@@ -12,7 +12,7 @@ app.use(bodyparser.json());
 const db = mysql.createConnection({
     host: "localhost",
     user : 'root',
-    password : '',
+    password : 'Asmrasmr7!',
     database : "m2i_angular_nodejs"
 
 })
@@ -53,7 +53,7 @@ app.get('/categorie/:idCategorie', (req, res) =>{
 
    let sql = `select * from categorie where idCategorie = ${idCategorie}`
    
-   db.query(sql, (err, result) =>{
+   db.query(sql, (err, result) =>{  
        if(err) {
            console.log('Erreur lors la récupération de la catégorie avec id' + idCategorie, err.message)
        }
@@ -242,7 +242,7 @@ app.delete('/formateurs/:idFormateur', (req, res) => {
 
  //récupérer toutes les formations
  app.get('/formations', (req, res) => {
-     let sql = 'select * from Formations f, Formateurs fo, categorie c WHERE f.idFormateur = fo.idFormateur AND f.idCategorie = c.idCategorie'
+     let sql = 'select * from formations f, formateurs fo, categorie c WHERE f.idFormateur = fo.idFormateur AND f.idCategorie = c.idCategorie'
 
      db.query(sql, (err, result) => {
 
@@ -250,7 +250,7 @@ app.delete('/formateurs/:idFormateur', (req, res) => {
         {
             console.log(err, 'erreur récupération données Formations')
         }
-        if(result.length > 0)
+        if(res.length > 0)
         {
             res.send({
                 message:'Toutes les formations',
