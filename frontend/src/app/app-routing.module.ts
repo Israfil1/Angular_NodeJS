@@ -36,7 +36,7 @@ const routes: Routes = [
   {path:'stagiaires/ajouter-stagiaires', component: AjouterStagiairesComponent},
   {path:'stagiaires/ajouter-stagiaires/:idStagiaire', component: AjouterStagiairesComponent},
   {path:'categories/ajouter-categories' , component:AjouterCategoriesComponent},
-  {path:'categories/ajuter-categories/:idCategorie', component:AjouterCategoriesComponent},
+  {path:'categories/ajouter-categories/:idCategorie', component:AjouterCategoriesComponent},
   {path: '**', component: PageNonTrouveeComponent},
 
   
