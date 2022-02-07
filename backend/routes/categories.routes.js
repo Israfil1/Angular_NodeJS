@@ -83,7 +83,7 @@ router.put('/:idCategorie', (req, res) => {
         if(err) {
             console.log('erreur de la modification ', err.message)
         }
-        result.send({
+        res.send({
             message:'catégorie modifiée'
         })
     })
