@@ -63,7 +63,7 @@ router.post('/', (req, res) => {
         if(err) {
             console.log('Erreur lors de lajout ', err)
         }
-            result.send({
+            res.send({
                 message : "Categorie ajoutée"
             })
     })
@@ -101,7 +101,7 @@ router.delete('/:idCategorie', (req, res) => {
         if(err) {
             console.log('erreur de la suppression ', err.message)
         }
-        result.send({
+        res.send({
             message:'Catégorie supprimée'
         })
  

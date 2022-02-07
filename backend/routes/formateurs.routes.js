@@ -65,7 +65,7 @@ router.post('/', (req, res) => {
         if(err) {
             console.log('Erreur lors de lajout ', err)
         }
-            result.send({
+            res.send({
                 message : "Formateur ajouté"
             })
     })

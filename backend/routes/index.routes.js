@@ -4,7 +4,7 @@ const formateursRouter = require('./formateurs.routes');
 const formationsRouter = require('./formations.routes');
 const stagiairesRouter = require('./stagiaires.routes')
 
-router.use('/categorie', categoriesRouter);
+router.use('/categories', categoriesRouter);
 router.use('/formateurs', formateursRouter);
 router.use('/formations', formationsRouter);
 router.use('/stagiaires', stagiairesRouter)
