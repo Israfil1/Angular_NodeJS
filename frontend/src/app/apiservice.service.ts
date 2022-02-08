@@ -114,7 +114,7 @@ export class ApiserviceService {
 
   /* ****** CATEGORIES - CRUD **/
 
-apiUrlCategories = 'http://localhost:3000/categorie';
+apiUrlCategories = 'http://localhost:3000/categories';
 
 /* Récupérer toutes les catégories */
 

@@ -5,34 +5,43 @@
 
     <div *ngIf="onError" class="alert alert-danger alert-dismissible fade show" role="alert">
         <strong>{{onError}}</strong> 
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"></button>
       </div>
 
 <!-- Si la saisie ne contient pas d'erreurs  -->
       <div *ngIf="onSucces" class="alert alert-success alert-dismissible fade show" role="alert">
         <strong>{{onSucces}}</strong> 
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"></button>
       </div>
 
 <!-- Formulaire de saisie d'une nouvelle catégorie -->
-<h1>Pour ajouter/modifier une catégorie, merci de remplir  les champs suivants :</h1>
+<h1>Pour ajouter/modifier une catégorie, merci de remplir  le champ suivant :</h1>
 <form [formGroup]="categoriesForm">
-    <div class="col-lg-4 mt-2">
-        <input type="text" class="form-control" formControlName="nomCategorie" placeholder="Entrer le nom de la nouvelle catégorie">
+    <div class="formContainer">
+
+        <div class="col-lg-4 mt-2">
+            <input type="text" class="form-control" formControlName="nomCategorie" placeholder="Entrer le nom de la nouvelle catégorie">
     </div>
-   
-   
-   
- 
+    
+    
+    
+    
     
     <div class="col-lg-4 mt-2" *ngIf="!idParams" (click)="categoriesSubmit()">
-        <button class="btn btn-primary btn-sm">Ajouter</button>
+        <div class="btnContainer">
+            <button class="btn btn-primary btn-sm">Ajouter</button>
+            <a routerLink="/categories" routerLinkActive="lienactif"><button type="button" class="btn btn-primary btn-sm">Retour</button></a>
+            
+        </div>
+
     </div>
     
     <div class="col-lg-4 mt-2" *ngIf="idParams" (click)="modifierCategorie()">
         <button class="btn btn-primary btn-sm">Modifier</button>
+        <a routerLink="/categories" routerLinkActive="lienactif"><button type="button" class="btn btn-primary btn-sm">Retour</button></a>
     </div>
-
+</div>
+    
 </form>
 
 </div>

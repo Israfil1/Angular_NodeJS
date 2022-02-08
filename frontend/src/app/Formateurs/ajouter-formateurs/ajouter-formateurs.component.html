@@ -31,10 +31,12 @@
         
         <div class="col-lg-4 mt-2" *ngIf="!getparamid" (click)="formateursSubmit()">
             <button class="btn btn-primary btn-sm">Ajouter</button>
+            <a routerLink="/formateurs" routerLinkActive="lienactif"><button type="button" class="btn btn-primary btn-sm">Retour</button></a>
         </div>
         
         <div class="col-lg-4 mt-2" *ngIf="getparamid" (click)="modifierFormateurs()">
             <button class="btn btn-primary btn-sm">Modifier</button>
+            <a routerLink="/formateurs" routerLinkActive="lienactif"><button type="button" class="btn btn-primary btn-sm">Retour</button></a>
         </div>
 
     </form>
