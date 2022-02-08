@@ -8,6 +8,8 @@ import { FormateursComponent } from './Formateurs/formateurs.component';
 import { FormationsComponent } from './formations/formations.component';
 import { StagiairesComponent } from './stagiaires/stagiaires.component';
 import { PageNonTrouveeComponent } from './page-non-trouvee/page-non-trouvee.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { AjouterCategoriesComponent } from './categories/ajouter-categories/ajouter-categories.component';
 
 
 
@@ -17,12 +19,27 @@ const routes: Routes = [
   {path: 'formateurs',component: FormateursComponent},
   {path: 'formations',component: FormationsComponent},
   {path: 'stagiaires',component: StagiairesComponent},
+<<<<<<< HEAD
+=======
+  {path:'categories', component: CategoriesComponent},
+
+  // {path: 'formateurs',component: FormateursComponent,
+     
+  //   children: [
+  //               {path: 'ajouter-formateurs', component: AjouterFormateursComponent},
+  //               {path: 'ajouter-formateurs/:id', component: AjouterFormateursComponent},
+  //               {path: '**', component: PageNonTrouveeComponent}
+  //   ]
+  // },
+>>>>>>> 4b0289c51c092d0bfd7f1cc8f54b4b7b9a7dce76
   {path: 'formateurs/ajouter-formateurs', component: AjouterFormateursComponent},
   {path: 'formateurs/ajouter-formateurs/:id', component: AjouterFormateursComponent},
   {path:'formations/ajouter-formations', component: AjouterFormationsComponent},
   {path:'formations/ajouter-formations/:idFormation', component: AjouterFormationsComponent},
   {path:'stagiaires/ajouter-stagiaires', component: AjouterStagiairesComponent},
   {path:'stagiaires/ajouter-stagiaires/:idStagiaire', component: AjouterStagiairesComponent},
+  {path:'categories/ajouter-categories' , component:AjouterCategoriesComponent},
+  {path:'categories/ajuter-categories/:idCategorie', component:AjouterCategoriesComponent},
   {path: '**', component: PageNonTrouveeComponent},
 
   

@@ -109,4 +109,48 @@ export class ApiserviceService {
     let ids = id;
     return this._http.get(`${this.apiUrlFormateurs}/${ids}`)
   }
+
+
+
+  /* ****** CATEGORIES - CRUD **/
+
+apiUrlCategories = 'http://localhost:3000/categorie';
+
+/* Récupérer toutes les catégories */
+
+getAllDataCategories() : Observable<any> {
+  return this._http.get(`${this.apiUrlCategories}`)
+;}
+
+/* Afficher une seule catégorie */
+
+getSingleDataCategorie(id:any):Observable<any> {
+  let ids = id;
+  return this._http.get(`${this.apiUrlCategories}/${ids}`)
+}
+
+
+/* Ajouter une catégorie */
+
+ajouterCategorie(data: any): Observable<any> {
+
+  return this._http.post(`${this.apiUrlCategories}`, data);
+}
+
+/* Supprimer une catégorie */
+
+supprimerCategorie(id:any) : Observable<any>{
+  let ids = id;
+  return this._http.delete(`${this.apiUrlCategories}/${ids}`)
+}
+
+/* Modifier une catégorie */
+
+modifierCategorie(data :any, id : any) : Observable<any> {
+  let ids = id;
+  return this._http.put(`${this.apiUrlCategories}/${ids}`, data)
+}
+
+
+  
 }

@@ -26,6 +26,7 @@
                   <tr *ngFor='let formation of lectureDonnee'>
                     <th scope="row" class="align-middle p-3">{{formation.idFormation}}</th>
                     <th class="align-middle p-3">{{formation.nomFormation}}</th>
+                    
                     <td class="align-middle">{{formation.dureeFormation  | titlecase}} jours </td>
                     <td class="align-middle">{{formation.nomFormateur  | titlecase}}</td>
                     <td class="align-middle">{{formation.nomCategorie}}</td>

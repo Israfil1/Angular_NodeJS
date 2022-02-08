@@ -1,0 +1,38 @@
+
+<div class="container mt-5">
+
+    <!-- Si erreur dans le formulaire -->
+
+    <div *ngIf="onError" class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>{{onError}}</strong> 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+<!-- Si la saisie ne contient pas d'erreurs  -->
+      <div *ngIf="onSucces" class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>{{onSucces}}</strong> 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+<!-- Formulaire de saisie d'une nouvelle catégorie -->
+<h1>Pour ajouter/modifier une catégorie, merci de remplir  les champs suivants :</h1>
+<form [formGroup]="categoriesForm">
+    <div class="col-lg-4 mt-2">
+        <input type="text" class="form-control" formControlName="nomCategorie" placeholder="Entrer le nom de la nouvelle catégorie">
+    </div>
+   
+   
+   
+ 
+    
+    <div class="col-lg-4 mt-2" *ngIf="!idParams" (click)="categoriesSubmit()">
+        <button class="btn btn-primary btn-sm">Ajouter</button>
+    </div>
+    
+    <div class="col-lg-4 mt-2" *ngIf="idParams" (click)="modifierCategorie()">
+        <button class="btn btn-primary btn-sm">Modifier</button>
+    </div>
+
+</form>
+
+</div>
