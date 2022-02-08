@@ -11,7 +11,7 @@ import { ApiserviceService } from 'src/app/apiservice.service';
 export class AjouterCategoriesComponent implements OnInit {
 
   constructor(private service:ApiserviceService, private routeur : ActivatedRoute) { }
-
+  
   onError:any;
   onSucces:any;
   idParams: any;
@@ -22,13 +22,14 @@ export class AjouterCategoriesComponent implements OnInit {
     {
       this.service.getSingleDataCategorie(this.idParams).subscribe((res) => {
         this.categoriesForm.patchValue({
-          nomCategories : res.data[0].nomCategorie
-
+          nomCategorie : res.data[0].nomCategorie
+          
         })
       });
     }
+    
   }
-
+  
   categoriesForm = new FormGroup({
 
     'nomCategorie' : new FormControl('', [Validators.required])
@@ -40,10 +41,11 @@ export class AjouterCategoriesComponent implements OnInit {
   {
     if(this.categoriesForm.valid)
     {
-      this.service.ajouterCategorie(this.categoriesForm.value).subscribe((res) => {
+      this.service.ajouterCategorie(this.categoriesForm.value).subscribe((res => {
         this.categoriesForm.reset()
         this.onSucces = res.message
-      })
+        
+      }))
     } else {
       this.onError = ' Veuillez remplir tous les champs'
     }

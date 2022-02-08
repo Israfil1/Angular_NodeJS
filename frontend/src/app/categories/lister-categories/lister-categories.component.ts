@@ -22,7 +22,6 @@ export class ListerCategoriesComponent implements OnInit {
   getCategories(){
     this.service.getAllDataCategories().subscribe((res) => {
       this.categoryData = res.data
-      console.log(this.categoryData);
     })
   }
 
@@ -32,6 +31,7 @@ export class ListerCategoriesComponent implements OnInit {
   {
     this.service.supprimerCategorie(id).subscribe((res) => {
       this.onSucces = res.message
+      this.getCategories()
     })
   }
 

@@ -18,9 +18,11 @@
         </div>
         <div class="col-lg-4 mt-2" *ngIf="!getParamId" (click)="validerStagiaire()">
             <button class="btn btn-primary btn-sm">Ajouter le stagiaire</button>
+            <a routerLink="/stagiaires" routerLinkActive="lienactif"><button type="button" class="btn btn-primary btn-sm">Retour</button></a>
         </div>
         <div class="col-lg-4 mt-2" *ngIf="getParamId" (click)="modifierStagiaire()">
             <button class="btn btn-primary btn-sm">Mettre à jour le stagiaire</button>
+            <a routerLink="/stagiaires" routerLinkActive="lienactif"><button type="button" class="btn btn-primary btn-sm">Retour</button></a>
         </div>
     </form>
 </div>

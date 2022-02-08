@@ -21,9 +21,11 @@
         </div>
         <div class="col-lg-4 mt-2" *ngIf="!getParamId" (click)="validerFormation()">
             <button class="btn btn-primary btn-sm">Créer la formation</button>
+            <a routerLink="/formations" routerLinkActive="lienactif"><button type="button" class="btn btn-primary btn-sm">Retour</button></a>
         </div>
         <div class="col-lg-4 mt-2" *ngIf="getParamId" (click)="modifierFormation()">
             <button class="btn btn-primary btn-sm">Mettre à jour la formation</button>
+            <a routerLink="/formations" routerLinkActive="lienactif"><button type="button" class="btn btn-primary btn-sm">Retour</button></a>
         </div>
     </form>
 </div>

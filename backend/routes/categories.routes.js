@@ -3,9 +3,10 @@ const router = require("express").Router()
 
 // --------------------------------------------------------- TABLE categorie -------------------------------------------------
 
- //récupérer toutes les catégories
-
+// Récupérer toutes les informations stockées dans la table catégorie 
 router.get('/', (req, res) => {
+
+    
     let sql = 'select * from categorie'
 
     connection.query(sql, (err, result) => {

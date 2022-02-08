@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');/* You can add global styles to this file, and also import other style files */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    background-color: #bcbcbc;
+    background-image:  radial-gradient(#ffffff 1.85px, transparent 1.85px), radial-gradient(#ffffff 1.85px, #bcbcbc 1.85px);
+    background-size: 74px 74px;
+    background-position: 0 0,37px 37px;
+}
+
+
+:root {
+    --main-font: 'Libre Baskerville', serif;
+    --size: 16px;
+}
+
+.formContainer {
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  margin-right: 12px;
+  margin-left: 12px;
+}
