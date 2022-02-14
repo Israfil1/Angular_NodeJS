@@ -4,7 +4,7 @@ const mysql = require('mysql2')
 const config = {
     host: "localhost",
     user : 'root',
-    password : 'Asmrasmr7!',
+    password : '',
     database : "m2i_angular_nodejs"
 }
 
